@@ -40,7 +40,7 @@ public class Pick_bottle extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int id = 3;
+                int id = 0;
                 a =id;
                 UserService uService=new UserService(Pick_bottle.this);
                 Bottle bottle = uService.Pickbottle(id);
