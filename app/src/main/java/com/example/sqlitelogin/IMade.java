@@ -24,9 +24,9 @@ public class IMade extends Activity {
         Bundle buldle = intent.getExtras();
         ArrayList<ArrayList<String>> list =((ArrayList<ArrayList<String>>) buldle.getSerializable("arrayList"));
         ArrayList<String> display = new ArrayList<>();
-        for(int i = 0; i<list.size();i++){
+        for(int i = 0; i<list.get(0).size();i++){
 
-            display.add(String.format("ID:%s\ntime:%s\nusernameReceive:%s\nusernameSend:%s",list.get(0).get(i), list.get(1).get(i), list.get(2).get(i), list.get(1).get(3)));
+            display.add(String.format("ID:%s\ntime:%s\nusernameReceive:%s\nusernameSend:%s",list.get(0).get(i), list.get(1).get(i), list.get(2).get(i), list.get(3).get(i)));
         }
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, display);

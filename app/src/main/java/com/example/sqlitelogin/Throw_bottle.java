@@ -43,7 +43,7 @@ public class Throw_bottle extends AppCompatActivity {
                 String uname = currentupser.getB();
                 String usernameR = null;
                 String time = currentTime();
-                String content = message.toString();
+                String content = message.getText().toString().trim();
                 UserService uService=new UserService(Throw_bottle.this);
                 Bottle bottle = new Bottle(uname,time,usernameR,content);
                 uService.throwBottle(bottle);

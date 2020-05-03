@@ -148,7 +148,7 @@ public class UserService {
 		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
 		Cursor s = sdb.rawQuery(String.format("select * from CommentDTB where BottleID like '%s'",id),null);
 
-		int bottleIDIndex = s.getColumnIndex("bottleID");
+		int bottleIDIndex = s.getColumnIndex("BottleID");
         int dateCIndex = s.getColumnIndex("dateC");
         int commentIndex = s.getColumnIndex("comment");
         int usernameCIndex = s.getColumnIndex("usernameC");

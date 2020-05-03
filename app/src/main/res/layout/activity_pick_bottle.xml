@@ -80,14 +80,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextComment" />
 
-    <ListView
-        android:layout_width="203dp"
-        android:layout_height="320dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="11dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -97,5 +89,16 @@
         android:text="Comment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottleContent" />
+
+    <TextView
+        android:id="@+id/textViewComment"
+        android:layout_width="185dp"
+        android:layout_height="228dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="14dp"
+        android:text="TextView"
+        android:background="#9caf02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 </android.support.constraint.ConstraintLayout>
