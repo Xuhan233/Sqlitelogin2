@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Throw_bottle">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="256dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bottle" />
+
+    <EditText
+        android:id="@+id/context"
+        android:layout_width="324dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFCED"
+        android:ems="10"
+        android:maxLength="50"
+        android:gravity="start|top"
+        android:hint="Write your message here!"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/throwButton"
+        android:layout_width="161dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:background="#C5A6B5"
+        android:text="Send it flowing"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:onClick="sendItFlowing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/context" />
+
+    <TextView
+        android:id="@+id/Maxhint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maximum input: 50 words"
+        app:layout_constraintBottom_toBottomOf="@+id/context"
+        app:layout_constraintEnd_toEndOf="@+id/context"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="@+id/context"
+        app:layout_constraintTop_toTopOf="@+id/context"
+        app:layout_constraintVertical_bias="0.906" />
+
+</android.support.constraint.ConstraintLayout>
