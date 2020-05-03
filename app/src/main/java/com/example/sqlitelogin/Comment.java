@@ -4,13 +4,13 @@ import java.sql.Timestamp;
 public class Comment {
 
     private int bottleID; //Define the bottle
-    private Timestamp dateC; //When does the comment create
+    private String dateC; //When does the comment create
     private int commentID; //Define comment(key)
     private String comment; //context of the comment
     private String genderC; //The gender of the user who wrote this comment
     private String usernameC; //The username of the user who wrote this comment
 
-    public Comment(int bottleID, Timestamp dateC, int commentID, String comment, String genderC, String usernameC) {
+    public Comment(int bottleID, String dateC, int commentID, String comment, String genderC, String usernameC) {
         this.bottleID = bottleID;
         this.dateC = dateC;
         this.commentID = commentID;
@@ -21,7 +21,7 @@ public class Comment {
 
     public int getBottleID(){return  bottleID;}
 
-    public Timestamp getDateC(){return dateC;}
+    public String getDateC(){return dateC;}
 
     public int getCommentID(){return commentID;}
 

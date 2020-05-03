@@ -41,11 +41,13 @@ public class LoginActivity extends AppCompatActivity {
                 Log.i("TAG",name+"_"+pass);
                 UserService uService=new UserService(LoginActivity.this);
                 boolean flag=uService.login(name, pass);
+                final Commonvariables currentupser = (Commonvariables) getApplication();
                 System.out.println("==============================================");
                 if(flag){
                     System.out.println("--------------Obtain Successfuly-----------------------");
                     Log.i("TAG","Login in successful");
                     Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    currentupser.setB(name);
                     startActivity(new Intent(LoginActivity.this, MainInterface.class));
                 }else{
                     Log.i("TAG","Login failed");

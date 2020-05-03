@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_back"
     tools:context=".MainInterface">
 
     <TextView
@@ -27,15 +28,15 @@
         android:id="@+id/pick"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="72dp"
         android:background="#6C4F83"
+        android:onClick="pickBottle"
         android:text="Pick"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:typeface="monospace"
-        android:onClick="pickBottle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
@@ -59,7 +60,7 @@
         android:id="@+id/history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="52dp"
         android:background="#786345"
         android:onClick="historyBottle"
         android:text="Previous"
@@ -67,7 +68,7 @@
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/write" />
 

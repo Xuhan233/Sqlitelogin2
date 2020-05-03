@@ -12,19 +12,19 @@ import java.text.SimpleDateFormat;
 
 public class Bottle {
     private String usernameF; //The username of who create the bottle
-    private Timestamp dateF; //The datebottle create
-    private String genderF;           // The usernameF's gender
-    private String content;           // The original content of the bottle
-    private Integer bottleID;        // The key of the bottle
+    private String dateF; //The datebottle create
+    private String content;// The original content of the bottle
+    //private Integer bottleID;        // The key of the bottle
+    private String usernameR;
 
 
-    public Bottle(String usernameF, Timestamp dateF, String genderF, String content,
-                  int bottleID) {
+    public Bottle(String usernameF, String dateF, String usernameR, String content) {
         this.usernameF = usernameF;
         this.content = content;
         this.dateF = dateF;
-        this.genderF = genderF;
-        this.bottleID = bottleID;
+        this.usernameR = usernameR;
+
+//        this.bottleID = bottleID;
     }
 
 
@@ -33,17 +33,15 @@ public class Bottle {
         return usernameF;
     }
 
-    public Timestamp getDateF() {
+    public String getDateF() {
         return dateF;
-    }
-
-    public String getGenderF() {
-        return genderF;
     }
 
     public String getContent() { return content; }
 
-    public int getBottleID() { return bottleID; }
+    public String getUsernameR() {return usernameR;}
+
+//    public int getBottleID() { return bottleID; }
 
 
     public static String dateToStr(Timestamp time, String strFormat) {

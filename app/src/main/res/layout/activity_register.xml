@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/signup_back"
     tools:context=".RegisterActivity">
 <LinearLayout
     android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="欢迎进入注册界面!"
+        android:text="Welcome SignUp!"
         android:textSize="30dp"
         android:textStyle="bold" />
 
@@ -29,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="用户名：" />
+                android:text="username：" />
 
             <EditText
                 android:id="@+id/usernameRegister"

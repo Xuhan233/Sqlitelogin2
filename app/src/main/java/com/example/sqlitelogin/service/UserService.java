@@ -4,7 +4,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.sqlitelogin.Bottle;
+import com.example.sqlitelogin.Throw_bottle;
 import com.example.sqlitelogin.User;
+
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
 
 public class UserService {
@@ -15,7 +21,7 @@ public class UserService {
 
 	public boolean login(String username,String password){
 		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
-		String sql="select * from user where username=? and password=?";
+		String sql="select * From user where username=? and password=?";
 		Cursor cursor=sdb.rawQuery(sql, new String[]{username,password});		
 		if(cursor.moveToFirst()==true){
 			cursor.close();
@@ -30,4 +36,38 @@ public class UserService {
 		sdb.execSQL(sql, obj);	
 		return true;
 	}
+
+	public boolean throwBottle(Bottle bottle) {
+		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+		String sql ="insert into bottle(usernameF,date,usernameR,content) values(?,?,?,?)";
+		Object obj[]={bottle.getUsernameF(),bottle.getDateF(),bottle.getUsernameR(),bottle.getContent()};
+		sdb.execSQL(sql, obj);
+		return true;
+	}
+
+	public Bottle Pickbottle(int id){
+		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+
+		Cursor s = sdb.rawQuery(String.format("select * from bottle where bottleId like '%s'",id),null);
+		//int bottleIDIndex = s.getColumnIndex("bottleID");
+		int dateFIndex = s.getColumnIndex("date");
+		int contentIndex = s.getColumnIndex("content");
+		int usernameFIndex = s.getColumnIndex("usernameF");
+
+		s.moveToFirst();
+		// The ArrayList to save the information to return;
+		String dateF = s.getString(dateFIndex);
+		String content = s.getString(contentIndex);
+		String usernameF = s.getString(usernameFIndex);
+		String usernameR = null;
+
+		Bottle bottle = new Bottle(usernameF,dateF,usernameR,content);
+
+		s.close();
+		sdb.close();
+
+		return bottle;
+	}
+
+
 }
