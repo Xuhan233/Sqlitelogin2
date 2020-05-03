@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setAge(Integer.parseInt(agestr));
                 user.setSex(sexstr);
                 uService.register(user);
-                Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "SignUp Successfully", Toast.LENGTH_LONG).show();
             }
         });
     }

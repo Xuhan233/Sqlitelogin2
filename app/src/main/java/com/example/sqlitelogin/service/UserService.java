@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.ArrayAdapter;
 
 import com.example.sqlitelogin.Bottle;
+import com.example.sqlitelogin.Comment;
 import com.example.sqlitelogin.Readhistory;
 import com.example.sqlitelogin.Throw_bottle;
 import com.example.sqlitelogin.User;
@@ -135,6 +136,47 @@ public class UserService {
 
         return readhistories;
     }
+
+    public void addComment(Comment comment) {
+		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+		String sql = "insert into CommentDTB(BottleID, dateC, comment, usernameC) values(?,?,?,?)";
+		Object obj[]={comment.getBottleID(), comment.getDateC(),comment.getComment(),comment.getUsernameC()};
+		sdb.execSQL(sql, obj);
+	}
+
+	public ArrayList<Comment> getCommentbybottleID(int id) {
+		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+		Cursor s = sdb.rawQuery(String.format("select * from CommentDTB where BottleID like '%s'",id),null);
+
+		int bottleIDIndex = s.getColumnIndex("bottleID");
+        int dateCIndex = s.getColumnIndex("dateC");
+        int commentIndex = s.getColumnIndex("comment");
+        int usernameCIndex = s.getColumnIndex("usernameC");
+
+		s.moveToFirst();
+        // The ArrayList to save the information to return;
+        ArrayList<Comment> CommentInbottle = new ArrayList<>();
+
+        while (!s.isAfterLast()) {
+
+            int bottleId = s.getInt(bottleIDIndex);
+            String dateC = s.getString(dateCIndex);
+            String comment = s.getString(commentIndex);
+            String usernameC = s.getString(usernameCIndex);
+
+
+            // The ArrayList to save the information to return;
+            Comment comment1 = new Comment(bottleId, dateC, comment,usernameC);
+            CommentInbottle.add(comment1);
+            s.moveToNext();
+        }
+        s.close();
+        sdb.close();
+
+        return CommentInbottle;
+
+	}
+
 
 
 }
