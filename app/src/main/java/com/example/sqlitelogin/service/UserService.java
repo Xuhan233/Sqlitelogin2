@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.sqlitelogin.Bottle;
+import com.example.sqlitelogin.Readhistory;
 import com.example.sqlitelogin.Throw_bottle;
 import com.example.sqlitelogin.User;
 
@@ -67,6 +68,42 @@ public class UserService {
 		sdb.close();
 
 		return bottle;
+	}
+	public void historyRecord(Readhistory readhistory) {
+		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+		String sql = "insert into ReadhistoryDTB(usernameR, bottleId, time, UsernameF) values(?,?,?,?)";
+		Object obj[]={readhistory.getUsernameR(), readhistory.getBottleID(), readhistory.getTime(), readhistory.getUsernameF()};
+		sdb.execSQL(sql, obj);
+	}
+
+	public ArrayList<Readhistory> getHistory(String uname) {
+		SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+		Cursor s = sdb.rawQuery(String.format("select * from ReadhistoryDTB where UsernameR like '%s'",uname),null);
+
+		int bottleIDIndex = s.getColumnIndex("bottleID");
+		int timeIndex = s.getColumnIndex("time");
+		int usernameRIndex = s.getColumnIndex("usernameR");
+		int usernameFIndex = s.getColumnIndex("usernameF");
+
+		s.moveToFirst();
+
+		ArrayList<Readhistory> readhistories = new ArrayList<>();
+
+		while (!s.isAfterLast()) {
+
+			int bottleId = s.getInt(bottleIDIndex);
+			String time = s.getString(timeIndex);
+			String usernameR = s.getString(usernameRIndex);
+			String usernameF = s.getString(usernameFIndex);
+
+			Readhistory readhistory = new Readhistory(usernameR, bottleId, time,usernameF);
+			readhistories.add(readhistory);
+			s.moveToNext();
+		}
+		s.close();
+		sdb.close();
+
+		return readhistories;
 	}
 
 

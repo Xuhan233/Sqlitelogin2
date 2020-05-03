@@ -82,15 +82,15 @@
 //
 //        while (!s.isAfterLast()) {
 //
-//            int bottleId = s.getInt(bottleIDIndex);
-//            Timestamp time = Timestamp.valueOf(s.getString(timeIndex));
-//            String usernameR = s.getString(usernameRIndex);
-//            String usernameF = s.getString(usernameFIndex);
+//        int bottleId = s.getInt(bottleIDIndex);
+//        Timestamp time = Timestamp.valueOf(s.getString(timeIndex));
+//        String usernameR = s.getString(usernameRIndex);
+//        String usernameF = s.getString(usernameFIndex);
 //
-//            // The ArrayList to save the information to return;
-//            Readhistory readhistory = new Readhistory(usernameR, bottleId, time,usernameF);
-//            readhistories.add(readhistory);
-//            s.moveToNext();
+//        // The ArrayList to save the information to return;
+//        Readhistory readhistory = new Readhistory(usernameR, bottleId, time,usernameF);
+//        readhistories.add(readhistory);
+//        s.moveToNext();
 //        }
 //        s.close();
 //        sqLiteDatabase.close();
