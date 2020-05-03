@@ -3,6 +3,7 @@ package com.example.sqlitelogin.service;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.ArrayAdapter;
 
 import com.example.sqlitelogin.Bottle;
 import com.example.sqlitelogin.Readhistory;
@@ -83,7 +84,7 @@ public class UserService {
 		int bottleIDIndex = s.getColumnIndex("bottleID");
 		int timeIndex = s.getColumnIndex("time");
 		int usernameRIndex = s.getColumnIndex("usernameR");
-		int usernameFIndex = s.getColumnIndex("usernameF");
+		int usernameFIndex = s.getColumnIndex("UsernameF");
 
 		s.moveToFirst();
 
@@ -105,6 +106,35 @@ public class UserService {
 
 		return readhistories;
 	}
+    public ArrayList<Readhistory> getHistorymade(String uname) {
+        SQLiteDatabase sdb=dbHelper.getReadableDatabase();
+        Cursor s = sdb.rawQuery(String.format("select * from ReadhistoryDTB where UsernameF like '%s'",uname),null);
+
+        int bottleIDIndex = s.getColumnIndex("bottleID");
+        int timeIndex = s.getColumnIndex("time");
+        int usernameRIndex = s.getColumnIndex("usernameR");
+        int usernameFIndex = s.getColumnIndex("UsernameF");
+
+        s.moveToFirst();
+
+        ArrayList<Readhistory> readhistories = new ArrayList<>();
+
+        while (!s.isAfterLast()) {
+
+            int bottleId = s.getInt(bottleIDIndex);
+            String time = s.getString(timeIndex);
+            String usernameR = s.getString(usernameRIndex);
+            String usernameF = s.getString(usernameFIndex);
+
+            Readhistory readhistory = new Readhistory(usernameR, bottleId, time,usernameF);
+            readhistories.add(readhistory);
+            s.moveToNext();
+        }
+        s.close();
+        sdb.close();
+
+        return readhistories;
+    }
 
 
 }
