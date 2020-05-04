@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pick_back"
     tools:context=".IRead">
 
     <TextView
@@ -11,23 +12,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
         android:layout_marginLeft="176dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="165dp"
         android:layout_marginRight="165dp"
-        android:text="what I read"
+        android:fontFamily="sans-serif-medium"
+        android:text="My Bottles"
+        android:textColor="#BFFDFD"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/iread"
-        android:layout_width="409dp"
+        android:layout_width="363dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="82dp"
+        android:background="#86947D9B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

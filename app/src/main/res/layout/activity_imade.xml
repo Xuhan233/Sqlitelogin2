@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/throw_back"
     tools:context=".IMade">
 
     <TextView
@@ -12,24 +13,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="167dp"
         android:layout_marginLeft="167dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="167dp"
         android:layout_marginRight="167dp"
-        android:text="what I made"
+        android:text="My Bottles"
+        android:textColor="#FEF7D1"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listMade"
-        android:layout_width="409dp"
-        android:layout_height="619dp"
+        android:layout_width="353dp"
+        android:layout_height="599dp"
         android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
+        android:background="#9FEFC4C2"
+        android:cacheColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imade" />

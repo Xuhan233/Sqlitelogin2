@@ -17,8 +17,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="Welcome"
-        android:textSize="30dp"
+        android:text="Wandering Kindness"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:typeface="monospace"
+        app:fontFamily="monospace"
+        android:layout_marginTop="68dp"
         android:textStyle="bold" />
 
     <TableLayout
@@ -38,6 +43,9 @@
                 android:id="@+id/username"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:background="#7ADDC9FB"
+                android:textColor="#FFFFFF"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:hint="Please insert your username" />
         </TableRow>
 
@@ -47,32 +55,42 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Passward:" />
+                android:text="Password:" />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="Please insert the passward" />
+                android:background="#9084D1F8"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFFFFF"
+                android:hint="Please insert the password" />
         </TableRow>
 
         <TableRow>
 
             <TextView />
 
-            <LinearLayout>
+            <LinearLayout android:layout_width="282dp">
 
                 <Button
                     android:id="@+id/login"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Login" />
+                    android:layout_marginTop="56dp"
+                    android:background="#E0C8FB"
+                    android:text="Login"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/register"
                     android:layout_width="100dp"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_height="wrap_content"
-                    android:text="Sign Up" />
+                    android:background="#D8B9FA"
+                    android:text="Sign Up"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </TableRow>
     </TableLayout>
